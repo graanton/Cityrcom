@@ -7,7 +7,7 @@ public class ChestLootVisualizer : MonoBehaviour
     [SerializeField] private Transform _visualizeParent;
     [SerializeField] private ChestHandler _chestHandler;
 
-    readonly List<LootUIBox> _boxes = new();
+    public readonly List<LootUIBox> visualizedLoots = new();
 
     private void Awake()
     {
@@ -20,17 +20,17 @@ public class ChestLootVisualizer : MonoBehaviour
         foreach (var loot in chest.content)
         {
             LootUIBox box = _visualizer.CreateUISlot(_visualizeParent, loot);
-            _boxes.Add(box);
+            visualizedLoots.Add(box);
         }
     }
 
     public void OnChestClosed(Chest chest)
     {
-        foreach (LootUIBox box in _boxes)
+        foreach (LootUIBox box in visualizedLoots)
         {
             Destroy(box.gameObject);
         }
-        _boxes.Clear();
+        visualizedLoots.Clear();
     }
 
 }

@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour, IInteractble
 {
-    public string interactionPrompt => "Chest";
+    [SerializeField] private string _prompt = "Chest";
+
+    public string interactionPrompt => _prompt;
     public bool canInteraction => true;
 
     public List<LootBase> content;
@@ -15,4 +17,5 @@ public class Chest : MonoBehaviour, IInteractble
             chestHandler.Open(this);
         }
     }
+
 }
