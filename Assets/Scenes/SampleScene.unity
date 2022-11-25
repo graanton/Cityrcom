@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &44891127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8249852217390435791, guid: 036c55fc4e9569d40b22cdc4983caabd,
-    type: 3}
-  m_PrefabInstance: {fileID: 8249852216885814724}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &84101531
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,12 +775,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &442840713 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6982164979893027659, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3997695676663123291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &490348255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,6 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec851096c80f6844ba3867b01eeef77a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prompt: 
   content:
   - {fileID: 193380745953620410, guid: d92d757bd6d818348bc4647b3dd50b5b, type: 3}
   - {fileID: 193380745953620410, guid: d92d757bd6d818348bc4647b3dd50b5b, type: 3}
@@ -2170,7 +2159,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8249852216885814724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44891127}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeae92229fa75a045b70c1ab55727a74, type: 3}
@@ -2182,7 +2171,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8249852216885814724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44891127}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 731dac2154e221c428aa7b50252bdafc, type: 3}
@@ -2838,6 +2827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inventory: {fileID: 8249852216885814728}
+  _handler: {fileID: 0}
+  _lootActiveItemButton: {fileID: 0}
+  _visualizer: {fileID: 0}
 --- !u!1001 &8249852216885814724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2854,51 +2846,26 @@ PrefabInstance:
       propertyPath: _weaponUISlot
       value: 
       objectReference: {fileID: 1879434806}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
+    - target: {fileID: 8249852216885814733, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
-      propertyPath: _lootParent
+      propertyPath: _visualizer
       value: 
-      objectReference: {fileID: 442840713}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
+      objectReference: {fileID: 1840037065}
+    - target: {fileID: 8249852216885814733, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
-        type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
-        type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: _chestLootParent
       value: 
-      objectReference: {fileID: 1761018962}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
+      objectReference: {fileID: 1122218974}
+    - target: {fileID: 8249852216885814733, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
+      propertyPath: chestOpenEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 705048586}
+    - target: {fileID: 8249852216885814733, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: set_isStatic
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
-        type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
-        type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8249852216885814728, guid: 036c55fc4e9569d40b22cdc4983caabd,
-        type: 3}
-      propertyPath: addEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
+      propertyPath: chestCloseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 705048586}
     - target: {fileID: 8249852217390435784, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
       propertyPath: _joystick
@@ -2977,7 +2944,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8249852216885814724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44891127}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 66f2f3cbd186b6e488f44c9fac327f01, type: 3}
@@ -2989,55 +2956,21 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8249852216885814724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44891127}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d4faf4f256c7574088d2a45c70a9e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8249852216885814733
+--- !u!114 &8249852216885814733 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8249852216885814733, guid: 036c55fc4e9569d40b22cdc4983caabd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8249852216885814724}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44891127}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f39a0d089208db64a87492a00f4a17ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chestLootParent: {fileID: 1122218974}
-  _visualizer: {fileID: 1840037065}
-  _inventory: {fileID: 8249852216885814728}
-  _chessOpener: {fileID: 1744054291}
-  chestOpenEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 705048586}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  chestCloseEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 705048586}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

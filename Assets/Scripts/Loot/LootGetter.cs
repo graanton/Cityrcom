@@ -5,41 +5,31 @@ using System;
 
 public class LootGetter: MonoBehaviour
 {
-    [SerializeField] private InventoryUI _inventory;
+    [SerializeField] private LootInventory _inventory;
     [SerializeField] private Transform _choicePanel;
+    [SerializeField] private LootVisualizer _slotVisualizer;
 
     public UnityEvent requestGetEvent = new();
-    public LootEvent  comliteEvent = new();
+    public SelectEvent comliteEvent = new();
 
-    private bool _isRequesting;
-
-    public bool Request<T>()
+    public void RequestFromInventory<T>(IRequester requester)
     {
-        if (_isRequesting)
-        {
-            return false;
-        }
         Clear();
         requestGetEvent?.Invoke();
-        foreach (LootUIBox item in _inventory.lootUIBoxes)
+        foreach (LootBase item in _inventory.storedLoots)
         {
-            if (item.loot is T)
+            if (item is T)
             {
-                LootUIBox box = Instantiate(item, _choicePanel);
-                box.SetLoot(item.loot);
-                box.Init();
+                LootUIBox box = _slotVisualizer.CreateUISlot(_choicePanel, item);
                 LootSelecter selecter = box.gameObject.AddComponent<LootSelecter>();
-                selecter.SetRequester(this);
+                selecter.SetRequester(requester);
             }
         }
-        _isRequesting = true;
-        return _isRequesting;
     }
 
-    public void CompliteRequest(LootBase loot)
+    public void CompliteRequest(LootUIBox loot)
     {
         comliteEvent?.Invoke(loot);
-        _isRequesting = false;
     }
 
     private void Clear()
@@ -55,4 +45,15 @@ public class LootGetter: MonoBehaviour
 public class LootEvent : UnityEvent<LootBase>
 {
     
+}
+
+[Serializable]
+public class SelectEvent : UnityEvent<LootUIBox>
+{
+    
+}
+
+public interface IRequester
+{
+    void OnRequestComplited(LootUIBox box);
 }

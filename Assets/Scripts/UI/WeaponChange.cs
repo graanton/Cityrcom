@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button), typeof(LootUIBox))]
-public class WeaponChange : MonoBehaviour
+public class WeaponChange : MonoBehaviour, IRequester
 {
     [SerializeField] private LootGetter _requestComliter;
 
@@ -19,12 +19,12 @@ public class WeaponChange : MonoBehaviour
     private void Request()
     {
         _requestComliter.comliteEvent.AddListener(OnRequestComplited);
-        _requestComliter.Request<WeaponBase>();
+        _requestComliter.RequestFromInventory<WeaponBase>(this);
     }
 
-    private void OnRequestComplited(LootBase weapon)
+    public void OnRequestComplited(LootUIBox box)
     {
-        _box.SetLoot(weapon);
+        _box.SetLoot(box.loot);
         _box.Init();
     }
 }

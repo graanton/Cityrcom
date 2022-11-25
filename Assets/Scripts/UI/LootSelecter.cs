@@ -4,14 +4,14 @@ using UnityEngine.EventSystems;
 [RequireComponent(typeof(LootUIBox))]
 public class LootSelecter : MonoBehaviour, IPointerDownHandler
 {
-    private LootGetter _lootGetter;
+    private IRequester _lootGetter;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _lootGetter.CompliteRequest(GetComponent<LootUIBox>().loot);
+        _lootGetter.OnRequestComplited(GetComponent<LootUIBox>());
     }
 
-    public void SetRequester(LootGetter requester)
+    public void SetRequester(IRequester requester)
     {
         _lootGetter = requester;
     }

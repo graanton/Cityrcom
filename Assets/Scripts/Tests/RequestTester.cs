@@ -3,20 +3,20 @@ using UnityEngine;
 
 namespace Tests
 {
-    public class RequestTester : MonoBehaviour
+    public class RequestTester : MonoBehaviour, IRequester
     {
         [SerializeField] private LootGetter _lootGetter;
 
         private IEnumerator Start()
         {
             yield return new WaitForSeconds(0.5f);
-            _lootGetter.Request<WeaponBase>();
-            _lootGetter.comliteEvent.AddListener(OnCompliteRequest);
+            _lootGetter.RequestFromInventory<WeaponBase>(this);
+            _lootGetter.comliteEvent.AddListener(OnRequestComplited);
         }
 
-        private void OnCompliteRequest(LootBase loot)
+        public void OnRequestComplited(LootUIBox box)
         {
-            print(loot.name);
+            print(box.loot.name);
         }
     }
 }
