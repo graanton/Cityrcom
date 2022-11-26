@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class ChestHandler : MonoBehaviour
 {
-    public ChestEvent chestOpenEvent;
-    public ChestEvent chestCloseEvent;
+    public ChestEvent chestOpenEvent = new();
+    public ChestEvent chestCloseEvent = new();
 
     private Chest _openedChest;
 

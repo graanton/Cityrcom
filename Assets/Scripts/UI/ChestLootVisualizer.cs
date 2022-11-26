@@ -7,7 +7,7 @@ public class ChestLootVisualizer : MonoBehaviour
     [SerializeField] private Transform _visualizeParent;
     [SerializeField] private ChestHandler _chestHandler;
 
-    public readonly List<LootUIBox> visualizedLoots = new();
+    public List<LootUIBox> visualizedLoots = new();
 
     private void Awake()
     {

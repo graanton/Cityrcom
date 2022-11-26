@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button), typeof(LootUIBox))]
 public class WeaponChange : MonoBehaviour, IRequester
 {
-    [SerializeField] private LootGetter _requestComliter;
+    [SerializeField] private InventoryGetter _requestComliter;
 
     private LootUIBox _box;
     private Button _button;
@@ -18,7 +18,6 @@ public class WeaponChange : MonoBehaviour, IRequester
 
     private void Request()
     {
-        _requestComliter.comliteEvent.AddListener(OnRequestComplited);
         _requestComliter.RequestFromInventory<WeaponBase>(this);
     }
 
