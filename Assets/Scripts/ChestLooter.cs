@@ -22,8 +22,7 @@ public class ChestLooter : MonoBehaviour
         _selectedChest = chest;
         foreach (var box in _visualizer.visualizedLoots)
         {
-            
-
+                 
         }
     }
 }

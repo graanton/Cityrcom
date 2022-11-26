@@ -27,6 +27,15 @@ public class LootGetter: MonoBehaviour
         }
     }
 
+    public void Request<T>(IRequester requester, List<LootUIBox> boxes)
+    {
+        foreach (LootUIBox box in boxes)
+        {
+            LootSelecter selecter = box.AddComponent<LootSelecter>();
+            selecter.SetRequester(requester);
+        }
+    }
+
     public void CompliteRequest(LootUIBox loot)
     {
         comliteEvent?.Invoke(loot);
