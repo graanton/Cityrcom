@@ -895,8 +895,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495956988}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31174803, y: -1.0780258, z: 4.535798}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31174803, y: -1.0780259, z: 4.535798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1460,6 +1460,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822717488}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &916867632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 134621832995616276, guid: 036c55fc4e9569d40b22cdc4983caabd,
+    type: 3}
+  m_PrefabInstance: {fileID: 8249852216885814724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945514550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,10 +2840,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 437723792, guid: 036c55fc4e9569d40b22cdc4983caabd, type: 3}
-      propertyPath: _input
-      value: 
-      objectReference: {fileID: 324468915}
     - target: {fileID: 3574511279092611752, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
       propertyPath: _weaponUISlot
@@ -2918,6 +2920,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8249852217390435798, guid: 036c55fc4e9569d40b22cdc4983caabd,
+        type: 3}
+      propertyPath: _head
+      value: 
+      objectReference: {fileID: 916867632}
     - target: {fileID: 8900298665215409826, guid: 036c55fc4e9569d40b22cdc4983caabd,
         type: 3}
       propertyPath: _weaponUISlot
