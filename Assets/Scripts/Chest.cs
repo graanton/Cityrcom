@@ -8,7 +8,7 @@ public class Chest : MonoBehaviour, IInteractble
     public string interactionPrompt => _prompt;
     public bool canInteraction => true;
 
-    public List<LootBase> content;
+    public List<LootBase> content = new();
 
     public void Interact(Interactor interactor)
     {

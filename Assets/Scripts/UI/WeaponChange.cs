@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Button), typeof(LootUIBox))]
+[RequireComponent(typeof(IPointerDownHandler), typeof(LootUIBox))]
 public class WeaponChange : MonoBehaviour, IRequester
 {
     [SerializeField] private InventoryGetter _requestComliter;

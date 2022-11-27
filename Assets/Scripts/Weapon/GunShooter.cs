@@ -4,9 +4,9 @@ using UnityEngine.Events;
 
 public class GunShooter : MonoBehaviour
 {
-    public WeaponSetEvent weaponSettedEvent;
+    public WeaponSetEvent weaponSettedEvent = new();
 
-    private WeaponBase _equippedWeapon;
+    public WeaponBase _equippedWeapon { get; private set; }
 
     public void SetWeapon(WeaponBase weapon)
     {

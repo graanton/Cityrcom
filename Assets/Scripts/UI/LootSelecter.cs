@@ -5,16 +5,16 @@ using UnityEngine.UI;
 [RequireComponent(typeof(LootUIBox))]
 public class LootSelecter : Button
 {
-    private IRequester _lootGetter;
+    private IRequester _lootTeker;
 
     public override void OnPointerDown(PointerEventData eventData)
     {
         base.OnPointerDown(eventData);
-        _lootGetter.OnRequestComplited(GetComponent<LootUIBox>());
+        _lootTeker.OnRequestComplited(GetComponent<LootUIBox>());
     }
 
     public void SetRequester(IRequester requester)
     {
-        _lootGetter = requester;
+        _lootTeker = requester;
     }
 }

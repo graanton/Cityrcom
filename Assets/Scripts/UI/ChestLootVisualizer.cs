@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ChestLootVisualizer : MonoBehaviour
 {
@@ -7,7 +9,9 @@ public class ChestLootVisualizer : MonoBehaviour
     [SerializeField] private Transform _visualizeParent;
     [SerializeField] private ChestHandler _chestHandler;
 
-    public List<LootUIBox> visualizedLoots = new();
+    private List<LootUIBox> visualizedLoots = new();
+
+    public VisualizeEvent chestVisualizedEvent;
 
     private void Awake()
     {
@@ -22,6 +26,7 @@ public class ChestLootVisualizer : MonoBehaviour
             LootUIBox box = _visualizer.CreateUISlot(_visualizeParent, loot);
             visualizedLoots.Add(box);
         }
+        chestVisualizedEvent?.Invoke(visualizedLoots);
     }
 
     public void OnChestClosed(Chest chest)
@@ -32,5 +37,7 @@ public class ChestLootVisualizer : MonoBehaviour
         }
         visualizedLoots.Clear();
     }
-
 }
+
+[Serializable] 
+public class VisualizeEvent: UnityEvent<List<LootUIBox>> { }
