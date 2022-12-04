@@ -4,26 +4,19 @@ using UnityEngine.UI;
 
 public abstract class LootUIBox : MonoBehaviour
 {
-    [SerializeField] protected TextMeshProUGUI _lootNameLabel;
-    [SerializeField] protected Image _lootIconField;
-    [SerializeField] protected TextMeshProUGUI _lootTypeLabel;
+    [SerializeField] private bool _initInStart = true;
 
     public abstract LootBase loot { get; }
 
-    public virtual void Init()
+    private void Start()
     {
-        if (loot == null)
+        if (_initInStart)
         {
-            _lootNameLabel.text = string.Empty;
-            _lootTypeLabel.text = string.Empty;
-        }
-        else
-        {
-            _lootIconField.sprite = loot.lootData.icon;
-            _lootNameLabel.text = loot.lootData.name;
-            _lootTypeLabel.text = loot.lootData.Type.ToString();
+            Init();
         }
     }
+
+    public abstract void Init();
 
     public abstract void SetLoot(LootBase loot);
 }

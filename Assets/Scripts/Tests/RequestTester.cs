@@ -10,7 +10,7 @@ namespace Tests
         private IEnumerator Start()
         {
             yield return new WaitForSeconds(0.5f);
-            _lootGetter.RequestFromInventory<WeaponBase>(this);
+            _lootGetter.RequestFromInventory<FireWeaponBase>(this);
         }
 
         public void OnRequestComplited(LootUIBox box)

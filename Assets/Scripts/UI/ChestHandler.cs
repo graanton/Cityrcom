@@ -15,7 +15,8 @@ public class ChestHandler : MonoBehaviour
     {
         if (_openedChest != null)
         {
-            throw new Exception("Close previous chest");
+            Debug.LogError("Close previous chest");
+            return;
         }
         _openedChest = chest;
         chestOpenEvent?.Invoke(_openedChest);
@@ -30,7 +31,7 @@ public class ChestHandler : MonoBehaviour
         }
         else
         {
-            throw new Exception("You can't close nothing");
+            Debug.LogError("You can't close nothing");
         }
     }
 }

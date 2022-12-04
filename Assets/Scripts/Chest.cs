@@ -17,5 +17,4 @@ public class Chest : MonoBehaviour, IInteractble
             chestHandler.Open(this);
         }
     }
-
 }

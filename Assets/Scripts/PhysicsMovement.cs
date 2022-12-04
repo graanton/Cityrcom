@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PhysicsMovement : MonoBehaviour
 {
-    [SerializeField] private Joystick _joystick;
     [SerializeField] private float _speed = 5;
 
     private Rigidbody _rigidbody;
@@ -13,16 +12,9 @@ public class PhysicsMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    public void Walk(Vector2 localDirection)
     {
-        Vector2 input = _joystick.Direction;
-        Vector3 moveDirection = transform.right * input.x + transform.forward * input.y;
-
-        Move(moveDirection * Time.deltaTime * _speed);
-    }
-
-    public void Move(Vector3 direction)
-    {
-        _rigidbody.MovePosition(_rigidbody.position + direction);
+        localDirection.Normalize();
+        _rigidbody.MovePosition(_rigidbody.position + (transform.right * localDirection.x + transform.forward * localDirection.y) * _speed * Time.deltaTime);
     }
 }

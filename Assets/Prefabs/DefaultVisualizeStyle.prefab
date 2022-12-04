@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponSlotPrefab: {fileID: 6851701360751846291, guid: 9a9561c9430496a43949a1d8e7b85a2b,
     type: 3}
+  _meleeSlotPrefab: {fileID: 3197467092746921789, guid: e02d8e8405f9d294291b01a60be2e6c5,
+    type: 3}

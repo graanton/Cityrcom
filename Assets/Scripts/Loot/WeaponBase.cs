@@ -1,14 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
-public abstract class  WeaponBase: LootBase
+public abstract class WeaponBase : LootBase
 {
-    [SerializeField] protected LootWeaponData _weaponData;
+    public override int count => 1;
 
-    public Transform leftHandPoint, rightHandPoint, localPoint;
-
-    public override LootData lootData => _weaponData;
-    public abstract int haveAmmo { get; }
-
-    public abstract void StartShooting();
-    public abstract void StopShooting();
+    public abstract void StartAttacking();
+    public abstract void StopAttacking();
 }

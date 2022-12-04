@@ -2,7 +2,7 @@
 
 public abstract class LootData : ScriptableObject
 {
-    [SerializeField] protected Sprite _icon;
+    [SerializeField] private Sprite _icon;
 
     public abstract LootType Type { get; }
     public Sprite icon => _icon;
@@ -10,7 +10,7 @@ public abstract class LootData : ScriptableObject
 
 public enum LootType
 {
-    other = 0,
-    weapon = 1,
-    knowledge = 2
+    other,
+    weapon,
+    knowledge
 }

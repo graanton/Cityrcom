@@ -50,8 +50,8 @@ public class ChestLooter : MonoBehaviour, IRequester
         if (_selectedBox != null)
         {
             _inventory.AddLoot(_selectedBox.loot);
+            _openedChest.content.Remove(_selectedBox.loot);
             _visualizedLoots.Remove(_selectedBox);
-
             Destroy(_selectedBox.gameObject);
         }
         

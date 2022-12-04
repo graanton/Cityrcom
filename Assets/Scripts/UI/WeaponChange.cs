@@ -2,10 +2,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(IPointerDownHandler), typeof(LootUIBox))]
+[RequireComponent(typeof(Button))]
 public class WeaponChange : MonoBehaviour, IRequester
 {
     [SerializeField] private InventoryGetter _requestComliter;
+    [SerializeField] private WeaponType _changeType;
 
     private LootUIBox _box;
     private Button _button;
@@ -19,7 +20,20 @@ public class WeaponChange : MonoBehaviour, IRequester
 
     private void Request()
     {
-        _requestComliter.RequestFromInventory<WeaponBase>(this);
+        switch (_changeType)
+        {
+            case WeaponType.fire:
+                RequsetsWeaponType<FireWeaponBase>();
+                break;
+            case WeaponType.melee:
+                RequsetsWeaponType<MeleeBase>();
+                break;
+        }
+    }
+
+    private void RequsetsWeaponType<T>()
+    {
+        _requestComliter.RequestFromInventory<T>(this);
     }
 
     public void OnRequestComplited(LootUIBox box)

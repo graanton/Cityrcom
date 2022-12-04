@@ -4,13 +4,21 @@ using UnityEngine;
 public class LootVisualizer : MonoBehaviour
 {
     [SerializeField] private WeaponUISlot _weaponSlotPrefab;
+    [SerializeField] private MeleeUISlot _meleeSlotPrefab;
+
+    private Transform _createParent;
 
     public LootUIBox CreateUISlot(Transform parent, LootBase loot)
     {
+        _createParent = parent;
         LootUIBox box;
-        if (loot is WeaponBase)
+        if (loot is FireWeaponBase)
         {
-            box = Instantiate(_weaponSlotPrefab, parent);
+            box = DefaultInstantialte(_weaponSlotPrefab);
+        }
+        else if (loot is MeleeBase)
+        {
+            box = DefaultInstantialte(_meleeSlotPrefab);
         }
         else
         {
@@ -19,5 +27,10 @@ public class LootVisualizer : MonoBehaviour
         box.SetLoot(loot);
         box.Init();
         return box;
+    }
+
+    private LootUIBox DefaultInstantialte(LootUIBox slotPrefab)
+    {
+        return Instantiate(slotPrefab, _createParent);
     }
 }

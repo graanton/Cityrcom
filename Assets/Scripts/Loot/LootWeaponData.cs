@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "weapon", menuName = "Loot/Weapon")]
-public class LootWeaponData : LootData
+public abstract class LootWeaponData : LootData
 {
-    [SerializeField] private GunCartridgeType _cartridgeType;
     [SerializeField] private float _mass;
 
-    public GunCartridgeType cartridgeType => _cartridgeType;
     public override LootType Type => LootType.weapon;
+    public abstract WeaponType WeaponType { get; }
+
     public float mass => _mass;
 }
 
-public enum GunCartridgeType
+public enum WeaponType
 {
-    automatic,
-    semiAutomatic
+    fire,
+    melee
 }
