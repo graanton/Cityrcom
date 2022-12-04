@@ -13,11 +13,9 @@ public class Gun : FireWeaponBase
     private bool _isShooting;
     private IEnumerator _shooting;
 
-    public override int count => throw new System.NotImplementedException();
-
     public override LootData lootData => _weaponData;
 
-    public override int haveAmmo => throw new System.NotImplementedException();
+    public override int haveAmmo => 12;
 
     public override void StartAttacking()
     {

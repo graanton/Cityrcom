@@ -17,16 +17,16 @@ public class Bat : MeleeBase
 
     public override void StopAttacking()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     private void Swing()
     {
-        RaycastHit[] hits = Physics.SphereCastAll(_attackPoint.position, _radius, transform.forward);
+        Collider[] hits = Physics.OverlapSphere( _attackPoint.position, _radius, _attackLayer);
 
-        foreach (RaycastHit hit in hits)
+        foreach (Collider hit in hits)
         {
-            if (hit.collider.TryGetComponent(out Rigidbody rigidbody))
+            if (hit.TryGetComponent(out Rigidbody rigidbody))
             {
                 rigidbody.AddForce(transform.forward * _force);
             }

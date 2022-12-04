@@ -5,8 +5,6 @@ public class HolsterSlot : MonoBehaviour
 {
     public WeaponBase weapon { get; private set; }
 
-    public bool weaponIsHided { get; private set; } = false;
-
     public void SetWeapon(WeaponBase weapon)
     {
         this.weapon = SpawnWeapon(weapon);

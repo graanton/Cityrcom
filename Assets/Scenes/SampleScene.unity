@@ -2735,6 +2735,11 @@ PrefabInstance:
       propertyPath: _inventory
       value: 
       objectReference: {fileID: 8249852216885814728}
+    - target: {fileID: 415271770321720892, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 135501466}
     - target: {fileID: 2944034557101185803, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
         type: 3}
       propertyPath: _viewRotater
@@ -2760,11 +2765,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8249852216885814739}
-    - target: {fileID: 3997695676994938403, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeWeapon
-      objectReference: {fileID: 0}
     - target: {fileID: 3997695677347846762, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2775,11 +2775,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8249852216885814739}
-    - target: {fileID: 3997695677406981089, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeWeapon
-      objectReference: {fileID: 0}
     - target: {fileID: 3997695677581893363, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
         type: 3}
       propertyPath: m_Name
@@ -2900,21 +2895,26 @@ PrefabInstance:
       propertyPath: _gunShooter
       value: 
       objectReference: {fileID: 8249852216885814726}
-    - target: {fileID: 4461510716108186282, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
+    - target: {fileID: 3997695677943260205, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
         type: 3}
-      propertyPath: weaponSetEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 135501466}
-    - target: {fileID: 6353006358336058945, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
-        type: 3}
-      propertyPath: weaponSetEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 217442570}
+      objectReference: {fileID: 8249852216885814739}
     - target: {fileID: 7563392311476545340, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
         type: 3}
       propertyPath: _chestHandler
       value: 
       objectReference: {fileID: 8249852216885814733}
+    - target: {fileID: 7628693104213140532, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8249852216885814725}
+    - target: {fileID: 8748377621868422586, guid: f5bbf16deba1d0c42a42e3dc783c40f9,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 217442570}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5bbf16deba1d0c42a42e3dc783c40f9, type: 3}
 --- !u!1001 &8249852216885814724

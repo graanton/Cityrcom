@@ -746,7 +746,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: mily
+  m_text: melee
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -773,11 +773,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 36.25
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 12
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -1570,18 +1570,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 8813650790762051184}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 3234119487578853675}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -1608,18 +1596,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8813650790762051184}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 3234119487578853675}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -2024,7 +2000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3997695677943260206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2127,7 +2103,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3997695677943260204}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: WeaponSetter, Assembly-CSharp
+        m_MethodName: ChangeWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3997695678018309555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3021,6 +3009,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40.3
       objectReference: {fileID: 0}
+    - target: {fileID: 390958944240687492, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: _requestComliter
+      value: 
+      objectReference: {fileID: 1724608564}
+    - target: {fileID: 390958944240687492, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 390958944240687492, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 390958944240687492, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 390958944240687492, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HolsterSlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 390958944240687492, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 462140513266540988, guid: 783f3ca997e24a34991b18e39bf7df17,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3681,6 +3699,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4865338569301205742, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 3513426395551601554}
     - target: {fileID: 5073270202983451433, guid: 783f3ca997e24a34991b18e39bf7df17,
         type: 3}
       propertyPath: m_Layer
@@ -4051,6 +4074,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40.3
       objectReference: {fileID: 0}
+    - target: {fileID: 7597906387026635660, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: _requestComliter
+      value: 
+      objectReference: {fileID: 1724608564}
+    - target: {fileID: 7597906387026635660, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597906387026635660, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597906387026635660, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597906387026635660, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HolsterSlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7597906387026635660, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7598705537957717083, guid: 783f3ca997e24a34991b18e39bf7df17,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4211,6 +4264,36 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8775223705552677378, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: _requestComliter
+      value: 
+      objectReference: {fileID: 1724608564}
+    - target: {fileID: 8775223705552677378, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775223705552677378, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775223705552677378, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775223705552677378, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HolsterSlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775223705552677378, guid: 783f3ca997e24a34991b18e39bf7df17,
+        type: 3}
+      propertyPath: changeEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8780636809824611205, guid: 783f3ca997e24a34991b18e39bf7df17,
         type: 3}
       propertyPath: m_Layer
@@ -4302,6 +4385,50 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 49434520373186488}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6645025774848973415 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6672223394098599391, guid: 783f3ca997e24a34991b18e39bf7df17,
+    type: 3}
+  m_PrefabInstance: {fileID: 49434520373186488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!222 &6627021150958054632
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645025774848973415}
+  m_CullTransparentMesh: 1
+--- !u!114 &3513426395551601554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645025774848973415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0e61c8fd375673b48ab9ecc0b91bb552, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6947623847412423168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6973062591592568248, guid: 783f3ca997e24a34991b18e39bf7df17,
@@ -4311,12 +4438,6 @@ GameObject:
 --- !u!224 &6982164979893027659 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6938360793428528371, guid: 783f3ca997e24a34991b18e39bf7df17,
-    type: 3}
-  m_PrefabInstance: {fileID: 49434520373186488}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8813650790762051184 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8863014650326432200, guid: 783f3ca997e24a34991b18e39bf7df17,
     type: 3}
   m_PrefabInstance: {fileID: 49434520373186488}
   m_PrefabAsset: {fileID: 0}

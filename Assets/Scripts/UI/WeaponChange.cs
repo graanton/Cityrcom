@@ -7,14 +7,17 @@ public class WeaponChange : MonoBehaviour, IRequester
 {
     [SerializeField] private InventoryGetter _requestComliter;
     [SerializeField] private WeaponType _changeType;
+    [SerializeField] private Transform _slotForWeaponParent;
+    [SerializeField] private LootVisualizer _visalizer;
 
-    private LootUIBox _box;
+    public WeaponEvent changeEvent;
+
     private Button _button;
+    private LootUIBox _weaponSlot;
 
-    private void Start()
+    protected void Start()
     {
-        _button = GetComponent<Button>();   
-        _box = GetComponent<LootUIBox>();
+        _button = GetComponent<Button>();
         _button.onClick.AddListener(Request);
     }
 
@@ -38,7 +41,12 @@ public class WeaponChange : MonoBehaviour, IRequester
 
     public void OnRequestComplited(LootUIBox box)
     {
-        _box.SetLoot(box.loot);
-        _box.Init();
+        if (_weaponSlot != null)
+        {
+            Destroy(_weaponSlot.gameObject);
+        }
+        _weaponSlot = _visalizer.CreateUISlot(_slotForWeaponParent, box.loot);
+
+        changeEvent?.Invoke((WeaponBase)_weaponSlot.loot);
     }
 }

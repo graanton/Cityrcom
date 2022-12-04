@@ -7,6 +7,6 @@ public class KeyboardInput : MonoBehaviour
 
     private void Update()
     {
-        _movement.Walk(Vector2.right * Input.GetAxis("Horizontal") + Vector2.up * Input.GetAxis("Vertical"));
+        _movement.Walk(Vector2.right * Input.GetAxisRaw("Horizontal") + Vector2.up * Input.GetAxisRaw("Vertical"));
     }
 }
