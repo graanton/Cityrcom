@@ -697,10 +697,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _initInStart: 1
+  _icon: {fileID: 5740935228698505533}
+  _nameLabel: {fileID: 1028758405758667496}
+  _typeLabel: {fileID: 8569276212714033688}
   _ammoLabel: {fileID: 3052534281452986040}
-  weaponSetEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _massLabel: {fileID: 4631077058314049848}
 --- !u!1 &7825703929673771601
 GameObject:
   m_ObjectHideFlags: 0

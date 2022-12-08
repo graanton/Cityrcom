@@ -6,9 +6,8 @@ public class Gun : FireWeaponBase
 {
     [SerializeField] private float _fireRate;
     [SerializeField] private float _reloadTime;
-    
-
     [SerializeField] private float _hitForce = 3000;
+    [SerializeField] private UnityEvent _shootEvent = new();
 
     private bool _isShooting;
     private IEnumerator _shooting;
@@ -62,5 +61,6 @@ public class Gun : FireWeaponBase
         {
             rigidbody.AddForceAtPosition((hit.point - transform.position) * _hitForce, hit.point);
         }
+        _shootEvent?.Invoke();
     }
 }

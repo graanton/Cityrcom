@@ -28,7 +28,7 @@ public class Bat : MeleeBase
         {
             if (hit.TryGetComponent(out Rigidbody rigidbody))
             {
-                rigidbody.AddForce(transform.forward * _force);
+                rigidbody.AddForce(transform.up * _force);
             }
         }
     }
