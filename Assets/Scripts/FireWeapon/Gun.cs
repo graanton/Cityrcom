@@ -6,7 +6,6 @@ public class Gun : FireWeaponBase
 {
     [SerializeField] private float _fireRate;
     [SerializeField] private float _reloadTime;
-    [SerializeField] private float _hitForce = 3000;
     [SerializeField] private UnityEvent _shootEvent = new();
 
     private bool _isShooting;
@@ -57,9 +56,9 @@ public class Gun : FireWeaponBase
     private void Shoot()
     {
         bool hited = Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out RaycastHit hit);
-        if (hited && hit.collider.TryGetComponent(out Rigidbody rigidbody))
+        if (hited && hit.collider.TryGetComponent(out IEntity target))
         {
-            rigidbody.AddForceAtPosition((hit.point - transform.position) * _hitForce, hit.point);
+            target.TakeDamage(_weaponData.damage);
         }
         _shootEvent?.Invoke();
     }

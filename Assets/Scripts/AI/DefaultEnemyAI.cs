@@ -1,21 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.Events;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class DefaultEnemyAI : MonoBehaviour
+public class DefaultEnemyAI : MonoBehaviour, IEntity
 {
-    [SerializeField] private Transform _target;
-    private NavMeshAgent _agent;
+    [SerializeField] private int _maxHealth;
+    public HitEvent hitEvent = new();
+    private int _health;
+    public int health => _health;
 
     private void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
+        _health = _maxHealth;
+        hitEvent.AddListener(OnDamageTaken);
     }
 
-    private void Update()
+    public void TakeDamage(int damage)
     {
-        _agent.SetDestination(_target.position);
+        hitEvent?.Invoke(damage);
+    }
+
+    private void OnDamageTaken(int damage)
+    {
+        _health -= damage;
     }
 }
+
+public class HitEvent: UnityEvent<int> { }

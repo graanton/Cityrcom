@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 3997695677330512952}
   - component: {fileID: 3997695677330512953}
   m_Layer: 5
-  m_Name: BlackDot
+  m_Name: Dot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,7 +985,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 22.22222, y: 22.22222}
+  m_SizeDelta: {x: 10.9, y: 10.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3997695677330512952
 CanvasRenderer:
@@ -1570,7 +1570,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3234119487578853675}
+      - m_Target: {fileID: 6944235362248156639}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1597,7 +1597,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3234119487578853675}
+      - m_Target: {fileID: 6944235362248156639}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -4361,12 +4361,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 783f3ca997e24a34991b18e39bf7df17, type: 3}
---- !u!1 &3234119487578853675 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3192567142733192851, guid: 783f3ca997e24a34991b18e39bf7df17,
-    type: 3}
-  m_PrefabInstance: {fileID: 49434520373186488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3997695678593339172 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4023134378209558684, guid: 783f3ca997e24a34991b18e39bf7df17,
@@ -4429,6 +4423,12 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6944235362248156639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6985436146243054183, guid: 783f3ca997e24a34991b18e39bf7df17,
+    type: 3}
+  m_PrefabInstance: {fileID: 49434520373186488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6947623847412423168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6973062591592568248, guid: 783f3ca997e24a34991b18e39bf7df17,

@@ -43,7 +43,7 @@ public class Interactor : MonoBehaviour
         return true;
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(_interactionPoint.position, _interactRadius);
